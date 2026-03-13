@@ -1,0 +1,62 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "📚 Digital Library System"
+    }
+  ],
+  "settings": {
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "spring-boot.ls.problem.application-properties.UNKNOWN_PROPERTY_KEY": "IGNORE",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "files.exclude": {
+      "**/target": true,
+      "**/node_modules": true,
+      "**/.git": true
+    },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+      "pom.xml": ".mvn, mvnw, mvnw.cmd",
+      "package.json": "package-lock.json, .eslintrc*, .prettierrc*"
+    }
+  },
+  "launch": {
+    "configurations": [
+      {
+        "type": "java",
+        "name": "🚀 Run Backend (Spring Boot)",
+        "request": "launch",
+        "mainClass": "com.digitallibrary.DigitalLibraryApplication",
+        "projectName": "digital-library-backend"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "🚀 Start Backend",
+        "type": "shell",
+        "command": "cd digital-library-backend && mvn spring-boot:run",
+        "group": "build",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new",
+          "name": "Backend"
+        }
+      },
+      {
+        "label": "⚛️ Start Frontend",
+        "type": "shell",
+        "command": "cd digital-library-frontend && npm start",
+        "group": "build",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new",
+          "name": "Frontend"
+        }
+      }
+    ]
+  }
+}

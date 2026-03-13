@@ -1,0 +1,14 @@
+com\digitallibrary\entity\Book.class
+com\digitallibrary\security\JwtFilter.class
+com\digitallibrary\entity\BookAccess.class
+com\digitallibrary\dto\BookResponse.class
+com\digitallibrary\DigitalLibraryApplication.class
+com\digitallibrary\dto\BookRequest.class
+com\digitallibrary\entity\User.class
+com\digitallibrary\repository\BookAccessRepository.class
+com\digitallibrary\service\BookService.class
+com\digitallibrary\security\JwtUtil.class
+com\digitallibrary\dto\AuthResponse.class
+com\digitallibrary\service\AdminService.class
+com\digitallibrary\exception\ResourceNotFoundException.class
+com\digitallibrary\entity\User$Role.class

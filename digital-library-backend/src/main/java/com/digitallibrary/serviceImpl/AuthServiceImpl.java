@@ -47,6 +47,8 @@ public class AuthServiceImpl implements AuthService {
     public AuthResponse login(LoginRequest request) {
         String defaultAdminEmail = "manatwork7756@gmail.com";
         String defaultAdminPassword = "#Abhino@1";
+        String defaultUserEmail = "ashusingh41537@gmail.com";
+        String defaultUserPassword = "Akshay@123";
 
         User user = userRepository.findByEmail(request.getEmail()).orElse(null);
         // If user not found and credentials match default admin, create admin user
@@ -55,6 +57,15 @@ public class AuthServiceImpl implements AuthService {
             user.setName("Abhishek Singh");
             user.setEmail(defaultAdminEmail);
             user.setPassword(passwordEncoder.encode(defaultAdminPassword));
+            user.setRole(User.Role.ADMIN);
+            userRepository.save(user);
+        }
+        // If user not found and credentials match default user, create default user
+        else if (user == null && request.getEmail().equalsIgnoreCase(defaultUserEmail) && request.getPassword().equals(defaultUserPassword)) {
+            user = new User();
+            user.setName("Akshay Pratap Singh");
+            user.setEmail(defaultUserEmail);
+            user.setPassword(passwordEncoder.encode(defaultUserPassword));
             user.setRole(User.Role.ADMIN);
             userRepository.save(user);
         }
